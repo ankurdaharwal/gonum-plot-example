@@ -39,8 +39,8 @@ func main() {
 		return
 	}
 
-	fromTime := time.Date(2016, time.September, 1, 0, 0, 0, 0, time.UTC)
-	toTime := time.Date(2016, time.December, 4, 0, 0, 0, 0, time.UTC)
+	fromTime := time.Date(2016, time.January, 1, 0, 0, 0, 0, time.UTC)
+	toTime := time.Date(2016, time.June, 1, 0, 0, 0, 0, time.UTC)
 
 	f := luftkvalitet.Filter{
 		Areas:      []string{"Tromsø"},
@@ -82,7 +82,7 @@ func main() {
 	p.Y.Min = 0
 	p.Y.Max = 300
 
-	if err := p.Save(16*vg.Inch, 16*vg.Inch, "plot.pdf"); err != nil {
+	if err := p.Save(16*vg.Inch, 16*vg.Inch, "luftkvalitet.png"); err != nil {
 		panic(err)
 	}
 }
